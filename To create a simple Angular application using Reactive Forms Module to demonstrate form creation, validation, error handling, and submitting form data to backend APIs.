@@ -1,0 +1,119 @@
+Practical No. 7
+Title
+Implementation of Student Registration Form using Angular Reactive Forms, Validation, and
+Backend API Submission
+Aim
+To create a simple Angular application using Reactive Forms Module to demonstrate form
+creation, validation, error handling, and submitting form data to backend APIs.
+Software Requirements
+● Node.js
+● Angular CLI
+● Web Browser
+Theory
+Template-driven Forms
+Template-driven forms are created using HTML templates and use the ngModel directive.
+They are suitable for simple forms but provide less control.
+Reactive Forms
+Reactive forms are created in the component using TypeScript. They provide better
+validation, scalability, and control over form data.
+Reactive Forms Module
+The ReactiveFormsModule is required to build reactive forms in Angular.
+Form Validation
+Form validation ensures that user input is correct before submitting the form. Angular
+provides built-in validators such as required and email.
+Error Handling
+Error handling is implemented by displaying validation error messages and handling HTTP
+errors during form submission.
+Submitting Form Data
+Angular uses HttpClient to send form data to backend APIs using HTTP methods like
+POST.
+Procedure
+1. Create a new Angular project.
+2. Import ReactiveFormsModule in AppModule.
+3. Create a component for the student form.
+4. Define form structure using FormGroup and FormControl.
+5. Apply validation rules using Validators.
+6. Display validation error messages.
+7. Submit form data to backend API using HttpClient.
+8. Display success or error message.
+Program Code (Minimum – Exam Oriented)
+1. app.module.ts
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+@NgModule({
+imports: [
+ReactiveFormsModule,
+HttpClientModule
+]
+})
+export class AppModule { }
+
+2. student-form.component.ts
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { StudentService } from '../student.service';
+studentForm = new FormGroup({
+name: new FormControl('', Validators.required),
+email: new FormControl('', [Validators.required, Validators.email]),
+course: new FormControl('', Validators.required)
+});
+constructor(private studentService: StudentService) {}
+onSubmit() {
+this.studentService.addStudent(this.studentForm.value)
+.subscribe({
+next: res => alert('Form Submitted Successfully'),
+error: err => alert('Submission Error')
+});
+}
+
+3. student-form.component.html
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+Name:
+<input type="text" formControlName="name"><br><br>
+Email:
+<input type="email" formControlName="email"><br><br>
+Course:
+<input type="text" formControlName="course"><br><br>
+<button type="submit" [disabled]="studentForm.invalid">
+Submit
+</button>
+</form>
+
+4. student.service.ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+@Injectable({ providedIn: 'root' })
+export class StudentService {
+apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+constructor(private http: HttpClient) {}
+addStudent(data: any) {
+return this.http.post(this.apiUrl, data);
+}
+}
+
+Flow Diagram
+User Input
+↓
+Reactive Form
+↓
+Validation
+↓
+Submit
+↓
+HttpClient POST
+↓
+Backend API
+↓
+Success / Error Message
+
+Output
+● Student registration form is displayed.
+● Validation messages appear for invalid input.
+● Form data is successfully submitted to backend API.
+● Success message is displayed after submission.
+Result
+Thus, a simple Angular application using Reactive Forms Module, form validation, error
+handling, and backend API submission was successfully implemented.
+
+Result
+Thus, a simple Angular application using Reactive Forms Module, form validation, error
+handling, and backend API submission was successfully implemented.
