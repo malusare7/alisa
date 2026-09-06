@@ -1,0 +1,36 @@
+Practical 1  
+*Angular Component + One-Way Data Binding + ngIf 
+
+Aim: To create an Angular component and demonstrate one-way data binding and *ngIf directive. 
+Steps:
+Step 1: Create Angular Application
+ng new myApp
+cd myApp
+ng serve
+
+Step 2: Create Component
+ng generate component student
+
+Step 3: Write Code in student.component.ts
+import { Component } from '@angular/core';
+@Component({
+selector: 'app-student',
+templateUrl: './student.component.html'
+})
+export class StudentComponent {
+studentName = 'Rahul';
+show = true;
+}
+
+Step 4: Write Code in student.component.html
+<h2 *ngIf="show">Student Name: {{ studentName }}</h2>
+
+Step 5: Use Component Selector in app.component.html
+<app-student></app-student>
+
+Output:
+Student name is displayed only when condition is true.
+
+Result:
+Thus, Angular component, one-way data binding and *ngIf directive are implemented
+successfully.
