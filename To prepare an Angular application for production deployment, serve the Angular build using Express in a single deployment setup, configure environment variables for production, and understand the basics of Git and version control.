@@ -1,0 +1,31 @@
+Practical No: 10
+Title
+Introduction to Deployment and Version Control for Angular Application
+Aim
+To prepare an Angular application for production deployment, serve the Angular build using
+Express in a single deployment setup, configure environment variables for production, and
+understand the basics of Git and version control.
+
+Software Requirements
+● Node.js
+● Angular CLI
+● Express.js
+● Git
+● Visual Studio Code
+● Web Browser
+
+Procedure
+1. Create or use an existing Angular application.
+2. Generate a production build of the Angular application using the Angular CLI.
+3. Create an Express server to serve the Angular build files.
+4. Configure environment variables for production settings such as API URLs.
+5. Run the Express server to serve the Angular application as a single deployment.
+6. Initialize a Git repository in the project folder.
+7. Track project files using Git and commit changes.
+8. Push the project to a remote Git repository.
+
+Result
+The Angular application was successfully prepared for production and served using an
+Express server in a single deployment setup. Environment variables were configured
+correctly for production use. Git was used for version control to track changes and manage
+the project source code efficiently
