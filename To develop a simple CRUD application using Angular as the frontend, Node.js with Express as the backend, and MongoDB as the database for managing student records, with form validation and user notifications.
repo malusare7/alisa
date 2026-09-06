@@ -1,0 +1,31 @@
+Practical No: 9
+Title
+CRUD Application using Angular, Node.js, and MongoDB
+Aim
+To develop a simple CRUD application using Angular as the frontend, Node.js with
+Express as the backend, and MongoDB as the database for managing student records, with
+form validation and user notifications.
+
+Software Requirements
+● Node.js
+● Angular CLI
+● MongoDB (Local or MongoDB Atlas)
+● Visual Studio Code
+● Web Browser (Chrome)
+
+Procedure
+1. Create an Angular application using Angular CLI.
+2. Design components for adding, viewing, editing, and deleting student records.
+3. Implement form validation in Angular forms.
+4. Create a Node.js backend using Express framework.
+5. Define REST API endpoints for Create, Read, Update, and Delete operations.
+6. Connect the backend to MongoDB using Mongoose.
+7. Integrate Angular frontend with backend APIs using HTTP services.
+8. Display success and error notifications to the user.
+9. Deploy the frontend on Netlify and backend on Vercel/Render.
+
+Result
+The CRUD application was successfully implemented using Angular, Node.js, and
+MongoDB. The application allows users to create, read, update, and delete student records
+with proper validation and notifications. The application was deployed successfully and is
+accessible online.
