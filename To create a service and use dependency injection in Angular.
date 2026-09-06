@@ -1,0 +1,37 @@
+Practical 3
+Service + Dependency Injection
+Aim:
+To create a service and use dependency injection in Angular.
+Steps:
+
+Step 1: Create Service
+ng generate service student
+
+Step 2: Write Code in student.service.ts
+import { Injectable } from '@angular/core';
+@Injectable({
+providedIn: 'root'
+})
+export class StudentService {
+getStudent() {
+return 'Student Name: Amit';
+}
+}
+
+Step 3: Use Service in app.component.ts
+import { StudentService } from './student.service';
+export class AppComponent {
+name = '';
+constructor(private studentService: StudentService) {
+this.name = this.studentService.getStudent();
+}
+}
+
+Step 4: Display Data in app.component.html
+<h3>{{ name }}</h3>
+
+Output:
+Student data fetched from service and displayed.
+
+Result:
+Thus, service and dependency injection are implemented successfully.
